@@ -1,17 +1,55 @@
+// LIBRARIES //
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+
+// COMPONENTS //
+import App from './components/App';
+import About from './components/About';
+import ErrorPage from './components/ErrorPage';
+import HomePage from './components/HomePage';
+import NewPropertyForm from './components/NewPropertyForm';
+import PropertyList from './components/PropertyList';
+import PropertyPage from './components/PropertyPage';
+
+// LOADERS //
+import { getPropertiesLoader, getPropertyByIdLoader } from './loaders';
+
+// STYLING //
+import './style.css';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />
+      },
+      {
+        path: "about",
+        element: <About />
+      },
+      {
+        path: "form",
+        element: <NewPropertyForm />
+      },
+      {
+        path: "properties",
+        element: <PropertyList />,
+        loader: getPropertiesLoader
+      },
+      {
+        path: "properties/:id",
+        element: <PropertyPage />,
+        loader: getPropertyByIdLoader
+      }
+    ]
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render( <RouterProvider router={router} /> );
