@@ -20,12 +20,13 @@ function NewPropertyForm() {
         comments: ""
     })
 
+
+    // EVENT HANDLERS //
     function handleInputChange(e) {
         const newInput = e.target.type === "checkbox" ? e.target.checked : e.target.value
         setPropertyProps(propertyProps => ({...propertyProps, [e.target.name]:newInput}))
     }
-
-    // EVENT HANDLERS //
+    
     function handleSubmitProperty(e) {
         e.preventDefault()
 
@@ -38,7 +39,7 @@ function NewPropertyForm() {
             body: JSON.stringify({
                 address: propertyProps.address,
                 neighborhood: propertyProps.neighborhood,
-                image: propertyProps.image,
+                img_url: propertyProps.image,
                 owner: propertyProps.owner,
                 management: propertyProps.management,
                 rent: propertyProps.rent,
@@ -90,7 +91,7 @@ function NewPropertyForm() {
                 />
                 <br/>
 
-                <label htmlFor="address">Property owner:</label>
+                <label htmlFor="owner">Property owner:</label>
                 <input
                     type="text"
                     name="owner"
@@ -100,7 +101,7 @@ function NewPropertyForm() {
                 />
                 <br/>
 
-                <label htmlFor="address">Property management:</label>
+                <label htmlFor="management">Property management:</label>
                 <input
                     type="text"
                     name="management"
