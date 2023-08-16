@@ -24,7 +24,7 @@ function NewPropertyForm() {
     // EVENT HANDLERS //
     function handleInputChange(e) {
         const newInput = e.target.type === "checkbox" ? e.target.checked : e.target.value
-        setPropertyProps(propertyProps => ({...propertyProps, [e.target.name]:newInput}))
+        setPropertyProps( propertyProps => ({...propertyProps, [e.target.name]:newInput}) )
     }
     
     function handleSubmitProperty(e) {
@@ -69,7 +69,7 @@ function NewPropertyForm() {
                     placeholder="enter address here..."
                     onChange={handleInputChange}
                 />
-                <br/>
+                <br/><br/>
 
                 <label htmlFor="neighborhood">Neighborhood:</label>
                 <input
@@ -79,7 +79,7 @@ function NewPropertyForm() {
                     placeholder="enter neighborhood here..."
                     onChange={handleInputChange}
                 />
-                <br/>
+                <br/><br/>
 
                 <label htmlFor="image">Image:</label>
                 <input
@@ -89,7 +89,7 @@ function NewPropertyForm() {
                     placeholder="enter image URL here..."
                     onChange={handleInputChange}
                 />
-                <br/>
+                <br/><br/>
 
                 <label htmlFor="owner">Property owner:</label>
                 <input
@@ -99,7 +99,7 @@ function NewPropertyForm() {
                     placeholder="enter property owner here..."
                     onChange={handleInputChange}
                 />
-                <br/>
+                <br/><br/>
 
                 <label htmlFor="management">Property management:</label>
                 <input
@@ -109,7 +109,7 @@ function NewPropertyForm() {
                     placeholder="enter management company here..."
                     onChange={handleInputChange}
                 />
-                <br/>
+                <br/><br/>
 
                 <label htmlFor="rent">Rent you paid:</label>
                 <input
@@ -118,7 +118,7 @@ function NewPropertyForm() {
                     value={propertyProps.rent}
                     onChange={handleInputChange}
                 />
-                <br/>
+                <br/><br/>
 
                 <label htmlFor="greenFlags">Any green flags?</label>
                 <input
@@ -127,7 +127,7 @@ function NewPropertyForm() {
                     value={propertyProps.greenFlags}
                     onChange={handleInputChange}
                 />
-                <br/>
+                <br/><br/>
 
                 <label htmlFor="redFlags">Any red flags?</label>
                 <input
@@ -137,7 +137,7 @@ function NewPropertyForm() {
                     placeholder="how many red flags?"
                     onChange={handleInputChange}
                 />
-                <br/>
+                <br/><br/>
 
                 <label htmlFor="laundryInBuilding">Laundry on site?</label>
                 <input
@@ -148,7 +148,7 @@ function NewPropertyForm() {
                     onChange={handleInputChange}
                 />
                 <label htmlFor="laundryInBuilding">{propertyProps.laundryInBuilding ? "Yes" : "No"}</label>
-                <br/>
+                <br/><br/>
 
                 <label htmlFor="address">Additional comments:</label>
                 <input
@@ -158,7 +158,7 @@ function NewPropertyForm() {
                     placeholder="add your comments here..."
                     onChange={handleInputChange}
                 />
-                <br/>
+                <br/><br/>
 
                 <input
                     type="submit"

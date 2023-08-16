@@ -4,7 +4,8 @@ function SearchSort({setSearchSort}) {
     // RENDER //
     return(
         <div className="search-sort">
-            <input type="text" placeholder="search properties by neighborhood" onChange={e => setSearchSort({searchString: e.target.value})}/>
+            <label>Search </label>
+            <input type="text" name="" placeholder="search properties by neighborhood" onChange={e => setSearchSort({searchString: e.target.value})}/>
             <br/>
             <select onChange={e => setSearchSort({searchProp: e.target.value})}>
                 <option value="id">ID</option>

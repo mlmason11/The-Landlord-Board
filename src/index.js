@@ -17,7 +17,9 @@ import { getPropertiesLoader, getPropertyByIdLoader } from './loaders';
 
 // STYLING //
 import './style.css';
+import 'semantic-ui-css/semantic.min.css'
 
+// ROUTER //
 const router = createBrowserRouter([
   {
     path: "/",
@@ -50,5 +52,6 @@ const router = createBrowserRouter([
   }
 ])
 
+// RENDER IN ROOT //
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( <RouterProvider router={router} /> );
