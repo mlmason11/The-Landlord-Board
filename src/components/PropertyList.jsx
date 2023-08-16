@@ -12,17 +12,7 @@ function PropertyList() {
     // HELPER FUNCTIONS //
     const cleanString = (str) => str?.toLowerCase().replace(/[\W_]+/g,"");
 
-    function sortArray(arr, prop, order) {
-        const sortedArr = arr.sort((a, b) => {
-            return a[prop] === b[prop]
-                ? 0
-                : a[prop] > b[prop] ? 1 : -1
-        });
-        return order === 'ascending' ? sortedArr : sortedArr.reverse()
-    }
-
     // STATE //
-    const [isDisplayed, setIsDisplayed] = useState(false)
     const [searchSort, setSearchSort] = useState({
         searchString: "",
         sortProp: "id",
@@ -32,15 +22,39 @@ function PropertyList() {
 
     // FILTERING, SORTING & MAPPING //
     const fileteredProperties = properties.filter(property => cleanString(property.neighborhood).startsWith(cleanString(searchSort.searchString)))
-    const sortedFilteredProperties = sortArray(fileteredProperties, searchSort.sortProp, searchSort.sortOrder)
+    const sortedFilteredProperties = fileteredProperties.sort((a, b) => {
+        const aValue = a[searchSort.sortProp]
+        const bValue = b[searchSort.sortProp]
+
+        switch (typeof aValue) {
+            case "string":
+              return searchSort.sortOrder === "ascending"
+                ? cleanString(aValue).localeCompare(cleanString(bValue))
+                : cleanString(bValue).localeCompare(cleanString(aValue));
+
+            case "number":    
+                return searchSort.sortOrder === "ascending"
+                    ? aValue - bValue
+                    : bValue - aValue;
+
+            case "boolean":
+                return aValue === bValue
+                    ? 0
+                    : searchSort.sortOrder === "ascending"
+                        ? aValue ? -1 : 1
+                        : aValue ? 1 : -1
+      
+            default:
+              return 0; // Fallback for unknown data types
+          }
+    })
     const mappedProperties = sortedFilteredProperties.map( propertyObj => <PropertyCard key={propertyObj.id} propertyObj={propertyObj} /> )
     
 
     // RENDER //
     return(
         <div className="property-list">
-            <button onClick={() => setIsDisplayed(!isDisplayed)}>{searchSort.isDisplayed ? "Hide" : "Show"} Search & Sort</button>
-            {isDisplayed ? <SearchSort setSearchSort={setSearchSort} /> : ""}
+            <SearchSort setSearchSort={setSearchSort} />
             {mappedProperties}
         </div>
     )

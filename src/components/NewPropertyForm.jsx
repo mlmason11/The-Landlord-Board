@@ -20,6 +20,11 @@ function NewPropertyForm() {
         comments: ""
     })
 
+    function handleInputChange(e) {
+        const newInput = e.target.type === "checkbox" ? e.target.checked : e.target.value
+        setPropertyProps(propertyProps => ({...propertyProps, [e.target.name]:newInput}))
+    }
+
     // EVENT HANDLERS //
     function handleSubmitProperty(e) {
         e.preventDefault()
@@ -61,7 +66,7 @@ function NewPropertyForm() {
                     name="address"
                     value={propertyProps.address}
                     placeholder="enter address here..."
-                    onChange={e => setPropertyProps.address(e.target.value)}
+                    onChange={handleInputChange}
                 />
                 <br/>
 
@@ -71,7 +76,7 @@ function NewPropertyForm() {
                     name="neighborhood"
                     value={propertyProps.neighborhood}
                     placeholder="enter neighborhood here..."
-                    onChange={e => setPropertyProps.neighborhood(e.target.value)}
+                    onChange={handleInputChange}
                 />
                 <br/>
 
@@ -81,7 +86,7 @@ function NewPropertyForm() {
                     name="image"
                     value={propertyProps.image}
                     placeholder="enter image URL here..."
-                    onChange={e => setPropertyProps.image(e.target.value)}
+                    onChange={handleInputChange}
                 />
                 <br/>
 
@@ -91,7 +96,7 @@ function NewPropertyForm() {
                     name="owner"
                     value={propertyProps.owner}
                     placeholder="enter property owner here..."
-                    onChange={e => setPropertyProps.owner(e.target.value)}
+                    onChange={handleInputChange}
                 />
                 <br/>
 
@@ -101,7 +106,7 @@ function NewPropertyForm() {
                     name="management"
                     value={propertyProps.management}
                     placeholder="enter management company here..."
-                    onChange={e => setPropertyProps.management(e.target.value)}
+                    onChange={handleInputChange}
                 />
                 <br/>
 
@@ -110,36 +115,38 @@ function NewPropertyForm() {
                     type="number"
                     name="rent"
                     value={propertyProps.rent}
-                    onChange={e => setPropertyProps.rent(e.target.value)}
+                    onChange={handleInputChange}
                 />
                 <br/>
 
-                <label htmlFor="green-flags">Any green flags?</label>
+                <label htmlFor="greenFlags">Any green flags?</label>
                 <input
                     type="number"
-                    name="green-flags"
+                    name="greenFlags"
                     value={propertyProps.greenFlags}
-                    onChange={e => setPropertyProps.greenFlags(e.target.value)}
+                    onChange={handleInputChange}
                 />
                 <br/>
 
-                <label htmlFor="red-flags">Any red flags?</label>
+                <label htmlFor="redFlags">Any red flags?</label>
                 <input
                     type="number"
-                    name="red-flags"
+                    name="redFlags"
                     value={propertyProps.redFlags}
                     placeholder="how many red flags?"
-                    onChange={e => setPropertyProps.redFlags(e.target.value)}
+                    onChange={handleInputChange}
                 />
                 <br/>
 
-                <label htmlFor="laundry-in-building">Check this box if there was laundry on site:</label>
+                <label htmlFor="laundryInBuilding">Laundry on site?</label>
                 <input
                     type="checkbox"
-                    name="laundry-in-building"
-                    value={propertyProps.laundryInBuilding}
-                    onChange={() => setPropertyProps.laundryInBuilding(!propertyProps.laundryInBuilding)}
+                    name="laundryInBuilding"
+                    value={propertyProps.laundryInBuilding ? true : false}
+                    checked={propertyProps.laundryInBuilding ? true : false}
+                    onChange={handleInputChange}
                 />
+                <label htmlFor="laundryInBuilding">{propertyProps.laundryInBuilding ? "Yes" : "No"}</label>
                 <br/>
 
                 <label htmlFor="address">Additional comments:</label>
@@ -148,7 +155,7 @@ function NewPropertyForm() {
                     name="comments"
                     value={propertyProps.comments}
                     placeholder="add your comments here..."
-                    onChange={e => setPropertyProps.comments(e.target.value)}
+                    onChange={handleInputChange}
                 />
                 <br/>
 

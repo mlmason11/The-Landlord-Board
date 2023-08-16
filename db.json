@@ -2,99 +2,107 @@
     "properties": [
         {
             "id": 1,
-            "addrsss": "20 W 34th St, New York, NY 10001",
+            "address": "20 W 34th St, New York, NY 10001",
             "neighborhood": "Midtown",
             "img_url": "https://media.timeout.com/images/101705309/image.jpg",
             "owner": "Tony Malkin",
             "management": "Tony Malkin's Empire State Realty Trust",
-            "comments": "Empire State Building",
             "rent": 9000,
+            "green_flags": 42,
             "red_flags": 19,
-            "laundry_in_building": true
+            "laundry_in_building": true,
+            "comments": "Empire State Building"
         },
         {
             "id": 2,
-            "addrsss": "2109 Broadway, New York, NY 10023",
+            "address": "2109 Broadway, New York, NY 10023",
             "neighborhood": "Upper West Side",
             "img_url": "https://photos.zillowstatic.com/fp/28db2f5cb22e04694b606a2bad675189-se_medium_500_250.webp",
             "owner": "Bernie Gelb",
             "management": "Ansonia Realty",
-            "comments": "The Ansonia",
             "rent": 7400,
+            "green_flags": 37,
             "red_flags": 3,
-            "laundry_in_building": false
+            "laundry_in_building": false,
+            "comments": "The Ansonia"
         },
         {
             "id": 3,
-            "addrsss": "66 Perry St, New York, NY 10014",
+            "address": "66 Perry St, New York, NY 10014",
             "neighborhood": "West Village",
             "img_url": "https://previews.123rf.com/images/boggy22/boggy221709/boggy22170900776/86123465-new-york-united-states-august-30-2017-view-at-66-perry-street-in-new-york-this-is-place-where.jpg",
             "owner": "Carrie Bradshaw",
             "management": "Carrie Bradshaw Realty",
-            "comments": "The Bradshaw",
             "rent": 6800,
+            "green_flags": 26,
             "red_flags": 7,
-            "laundry_in_building": true
+            "laundry_in_building": true,
+            "comments": "The Bradshaw"
         },
         {
             "id": 4,
-            "addrsss": "20 Ingram St, Queens, New York 11375",
+            "address": "20 Ingram St, Queens, New York 11375",
             "neighborhood": "Forest Hills",
             "img_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ZQf7AiThf6PrL7UHkGNwScBP034EelDHOjcVtPSzZjPvWkVxLAqVFhOoPvhiJx3xlVw&usqp=CAU",
             "owner": "Aunt May",
             "management": "Marvel Realty",
-            "comments": "Spider Man's Apartment",
             "rent": 4560,
+            "green_flags": 13,
             "red_flags": 2,
-            "laundry_in_building": false
+            "laundry_in_building": false,
+            "comments": "Spider Man's Apartment"
         },
         {
-            "id": 6,
-            "addrsss": "129 W 81st St, New York, NY 10024",
+            "id": 5,
+            "address": "129 W 81st St, New York, NY 10024",
             "neighborhood": "Upper West Side",
             "img_url": "https://www.hollywoodreporter.com/wp-content/uploads/2015/06/seinfeld_apt.jpg",
             "owner": "Jerry Seinfeld",
             "management": "Seinfeld Realty",
-            "comments": "Jerry's Apartment",
             "rent": 5450,
-            "red_flags": 97,
-            "laundry_in_building": true
+            "green_flags": 46,
+            "red_flags": 34,
+            "laundry_in_building": true,
+            "comments": "Jerry's Apartment"
         },
         {
-            "id": 7,
-            "addrsss": "90 Bedford St, New York, NY 10014",
+            "id": 6,
+            "address": "90 Bedford St, New York, NY 10014",
             "neighborhood": "West Village",
-            "img_url": "",
+            "img_url": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2018_19/1337916/monicas-apartment-today-tease-180509.jpg",
             "owner": "Rachel, Ross, Joey, Pheobe, Chandler, & Monica",
             "management": "Friends LLC",
-            "comments": "The Friends Apartment",
             "rent": 7500,
+            "green_flags": 87,
             "red_flags": 24,
-            "laundry_in_building": false
+            "laundry_in_building": false,
+            "comments": "The Friends Apartment"
         },
         {
             "id": 7,
-            "addrsss": "405 Lexington Ave, New York, NY 10174",
+            "address": "405 Lexington Ave, New York, NY 10174",
             "neighborhood": "Midtown",
             "img_url": "https://a.cdn-hotels.com/gdcs/production97/d761/68ebfed6-ffd4-4d8b-8609-855f460cd758.jpg?impolicy=fcrop&w=800&h=533&q=medium",
             "owner": "Signa Group",
             "management": "Signa Realty",
-            "comments": "Chrysler Building",
             "rent": 8320,
+            "green_flags": 29,
             "red_flags": 66,
-            "laundry_in_building": true
+            "laundry_in_building": true,
+            "comments": "Chrysler Building"
         },
         {
             "id": 8,
-            "addrsss": "8 Montague Ter, Brooklyn, New York 11201",
+            "address": "8 Montague Ter, Brooklyn, New York 11201",
             "neighborhood": "Brooklyn Heights",
             "img_url": "https://www.brownstoner.com/wp-content/uploads/2021/01/brooklyn-heights-8-montague-terrace-2020-sdevries-1.jpg",
             "owner": "Kate Armstrong",
             "management": "Zeta Realty LLC",
-            "comments": "No reservations as this is not a restaurant",
             "rent": 6300,
+            "green_flags": 56,
             "red_flags": 27,
-            "laundry_in_building": true
+            "laundry_in_building": true,
+            "comments": "No reservations please as this is not a restaurant"
         }
     ]
 }

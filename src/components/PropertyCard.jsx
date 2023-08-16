@@ -27,7 +27,6 @@ function PropertyCard({propertyObj}) {
             <p>{ propertyObj.green_flags }</p>
             <p>{ propertyObj.red_flags }</p>
             <p>Laundry in building? { propertyObj.laundry_in_building ? "YES" : "NO" }</p>
-            <br/>
             <button onClick={handleDeleteProperty}>DELETE</button>
         </div>
     )

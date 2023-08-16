@@ -7,7 +7,7 @@ function SearchSort({setSearchSort}) {
             <input type="text" placeholder="search properties by neighborhood" onChange={e => setSearchSort({searchString: e.target.value})}/>
             <br/>
             <select onChange={e => setSearchSort({searchProp: e.target.value})}>
-            <option value="id">ID</option>
+                <option value="id">ID</option>
                 <option value="neighborhood">Neighborhood</option>
                 <option value="address">Address</option>
                 <option value="owner">Owner</option>
