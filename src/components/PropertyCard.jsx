@@ -1,5 +1,6 @@
 //import placeholder from './property-placeholder.jpg'
 import { useNavigate } from 'react-router-dom'
+import { Button, Card, Icon, Image } from 'semantic-ui-react'
 
 function PropertyCard({propertyObj}) {
 
@@ -19,16 +20,31 @@ function PropertyCard({propertyObj}) {
 
     // RENDER //
     return(
-        <div className="property-card">
-            <h3>{ propertyObj.address }</h3>
-            <h3>{ propertyObj.neighborhood }</h3>
-            <img src={ propertyObj.img_url } alt={ propertyObj.address }/>
-            <p>{ propertyObj.rent }</p>
-            <p>{ propertyObj.green_flags }</p>
-            <p>{ propertyObj.red_flags }</p>
-            <p>Laundry in building? { propertyObj.laundry_in_building ? "YES" : "NO" }</p>
-            <button onClick={handleDeleteProperty}>DELETE</button>
-        </div>
+        <Card>
+            <Image src={ propertyObj.img_url } alt={ propertyObj.address } />
+            <Card.Content>
+                <Card.Header>
+                    {propertyObj.address}
+                </Card.Header>
+                <Card.Meta>
+                    {propertyObj.neighborhood}
+                </Card.Meta>
+                <Card.Description>
+                    Rent: ${propertyObj.rent}
+                </Card.Description>
+                <Card.Description>
+                    Green Flags: {propertyObj.green_flags} 
+                    <Icon className='ui green flag icon'/>
+                </Card.Description>
+                <Card.Description>
+                    Red Flags: {propertyObj.red_flags} 
+                    <Icon className='ui red flag icon'/>
+                </Card.Description>
+            </Card.Content>
+            <Button onClick={handleDeleteProperty}>
+                DELETE
+            </Button>
+        </Card>        
     )
 }
 

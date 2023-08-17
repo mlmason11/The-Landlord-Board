@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom'
 import PropertyCard from './PropertyCard'
 import SearchSort from './SearchSort'
 
+
 function PropertyList() {
 
     // LOADERS //
@@ -15,7 +16,7 @@ function PropertyList() {
     // STATE //
     const [searchSort, setSearchSort] = useState({
         searchString: "",
-        sortProp: "id",
+        sortProp: "",
         sortOrder: "ascending"
     })
 
@@ -53,9 +54,12 @@ function PropertyList() {
 
     // RENDER //
     return(
-        <div className="property-list">
+        <div>
             <SearchSort setSearchSort={setSearchSort} />
-            {mappedProperties}
+            <br/><br/>
+            <div className="ui cards centered flex grid container four wide">
+                {mappedProperties}
+            </div>
         </div>
     )
 }

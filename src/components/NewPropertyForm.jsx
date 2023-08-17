@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Form, Button } from 'semantic-ui-react'
+
 
 function NewPropertyForm() {
 
@@ -57,116 +59,110 @@ function NewPropertyForm() {
 
     // RENDER //
     return (
-        <div>
-            <form onSubmit={handleSubmitProperty}>
-                <h2>Add a new property to your list</h2>
-
-                <label htmlFor="address">Address:</label>
-                <input
-                    type="text"
-                    name="address"
-                    value={propertyProps.address}
-                    placeholder="enter address here..."
-                    onChange={handleInputChange}
-                />
-                <br/><br/>
-
-                <label htmlFor="neighborhood">Neighborhood:</label>
-                <input
-                    type="text"
-                    name="neighborhood"
-                    value={propertyProps.neighborhood}
-                    placeholder="enter neighborhood here..."
-                    onChange={handleInputChange}
-                />
-                <br/><br/>
-
-                <label htmlFor="image">Image:</label>
-                <input
-                    type="text"
-                    name="image"
-                    value={propertyProps.image}
-                    placeholder="enter image URL here..."
-                    onChange={handleInputChange}
-                />
-                <br/><br/>
-
-                <label htmlFor="owner">Property owner:</label>
-                <input
-                    type="text"
-                    name="owner"
-                    value={propertyProps.owner}
-                    placeholder="enter property owner here..."
-                    onChange={handleInputChange}
-                />
-                <br/><br/>
-
-                <label htmlFor="management">Property management:</label>
-                <input
-                    type="text"
-                    name="management"
-                    value={propertyProps.management}
-                    placeholder="enter management company here..."
-                    onChange={handleInputChange}
-                />
-                <br/><br/>
-
-                <label htmlFor="rent">Rent you paid:</label>
-                <input
-                    type="number"
-                    name="rent"
-                    value={propertyProps.rent}
-                    onChange={handleInputChange}
-                />
-                <br/><br/>
-
-                <label htmlFor="greenFlags">Any green flags?</label>
-                <input
-                    type="number"
-                    name="greenFlags"
-                    value={propertyProps.greenFlags}
-                    onChange={handleInputChange}
-                />
-                <br/><br/>
-
-                <label htmlFor="redFlags">Any red flags?</label>
-                <input
-                    type="number"
-                    name="redFlags"
-                    value={propertyProps.redFlags}
-                    placeholder="how many red flags?"
-                    onChange={handleInputChange}
-                />
-                <br/><br/>
-
-                <label htmlFor="laundryInBuilding">Laundry on site?</label>
-                <input
-                    type="checkbox"
-                    name="laundryInBuilding"
-                    value={propertyProps.laundryInBuilding ? true : false}
-                    checked={propertyProps.laundryInBuilding ? true : false}
-                    onChange={handleInputChange}
-                />
-                <label htmlFor="laundryInBuilding">{propertyProps.laundryInBuilding ? "Yes" : "No"}</label>
-                <br/><br/>
-
-                <label htmlFor="address">Additional comments:</label>
-                <input
-                    type="text"
+        <div className="ui equal width form flex container">
+            <Form onSubmit={e => handleSubmitProperty(e)}>
+                <Form.Group inline widths="equal">
+                    <Form.Input
+                        fluid
+                        label="Address"
+                        type="text"
+                        name="address"
+                        value={propertyProps.address}
+                        placeholder="Address here..."
+                        onChange={e => handleInputChange(e)}
+                    />
+                    <Form.Input
+                        fluid
+                        label="Neighborhood"
+                        type="text"
+                        name="neighborhood"
+                        value={propertyProps.neighborhood}
+                        placeholder="Neighborhood here..."
+                        onChange={e => handleInputChange(e)}
+                    />
+                    <Form.Input
+                        fluid
+                        label="Owner"
+                        type="text"
+                        name="address"
+                        value={propertyProps.owner}
+                        placeholder="Property owner here..."
+                        onChange={e => handleInputChange(e)}
+                    />
+                    <Form.Input
+                        fluid
+                        label="Property Management"
+                        type="text"
+                        name="address"
+                        value={propertyProps.owner}
+                        placeholder="Management company here..."
+                        onChange={e => handleInputChange(e)}
+                    />
+                </Form.Group>
+                <Form.Group inline widths="equal">
+                    <Form.Input
+                        fluid
+                        label="Monthly Rent"
+                        type="number"
+                        name="rent"
+                        value={propertyProps.rent}
+                        placeholder="Monthly rent here..."
+                        onChange={e => handleInputChange(e)}
+                    />
+                    <Form.Input
+                        fluid
+                        label="Green Flags"
+                        type="number"
+                        name="greenFlags"
+                        value={propertyProps.greenFlags}
+                        placeholder="How many green flags have you seen?"
+                        onChange={e => handleInputChange(e)}
+                    />
+                    <Form.Input
+                        fluid
+                        label="Red Flags"
+                        type="number"
+                        name="redFlags"
+                        value={propertyProps.redFlags}
+                        placeholder="How many red flags have you seen?"
+                        onChange={e => handleInputChange(e)}
+                    />
+                </Form.Group>
+                <Form.Group inline>
+                    <Form.Input
+                        width={14}
+                        fluid
+                        label="Image URL"
+                        type="image"
+                        name="image"
+                        value={propertyProps.image}
+                        placeholder="Enter image URL here..."
+                        onChange={e => handleInputChange(e)}
+                    />
+                    <Form.Field width={2}>
+                        <label htmlFor="laundryInBuilding">Laundry on site?</label>
+                        <input
+                            type="checkbox"
+                            name="laundryInBuilding"
+                            value={propertyProps.laundryInBuilding ? true : false}
+                            checked={propertyProps.laundryInBuilding ? true : false}
+                            onChange={handleInputChange}
+                        />
+                        <label htmlFor="laundryInBuilding">{propertyProps.laundryInBuilding ? "Yes" : "No"}</label>
+                    </Form.Field>
+                </Form.Group>
+                <Form.TextArea
+                    width={16}
+                    label="Additional Comments"
                     name="comments"
                     value={propertyProps.comments}
-                    placeholder="add your comments here..."
-                    onChange={handleInputChange}
+                    placeholder="Enter any additional comments here..."
+                    onChange={e => handleInputChange(e)}
                 />
-                <br/><br/>
-
-                <input
-                    type="submit"
-                    name="submit"
-                    value="Add New Property"
-                    className="submit"
-                />
-            </form>
+                <Button type="submit">
+                    SUBMIT NEW PROPERTY
+                </Button>
+            </Form>
         </div>
     )
 }

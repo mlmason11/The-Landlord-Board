@@ -1,10 +1,10 @@
-import Header from './Header'
+import Heading from './Heading'
 import { Outlet } from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Heading />
       <Outlet />
     </div>
   );
