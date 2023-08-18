@@ -1,21 +1,29 @@
 import { Form } from "semantic-ui-react"
-function SearchSort({setSearchSort}) {
+function SearchSort({searchSort, setSearchSort}) {
+
+    function handleUserInputChange(e) {
+        setSearchSort( searchSort => ({...searchSort, [e.target.name]:e.target.value}) )
+    }
 
     // RENDER //
     return(
-        <div className="ui form flex container">
+        <div className="ui segment form flex container">
             <Form>
                 <Form.Group inline>
                     <Form.Input
                         width={8}
-                        type="text"
                         fluid
                         label="Search by Neighborhood:"
-                        onChange={e => setSearchSort({searchString: e.target.value})}
+                        type="text"
+                        name="searchString"
+                        value={searchSort.searchString}
+                        onChange={e => handleUserInputChange(e)}
                     />
                     <Form.Select
                         width={4}
                         label="Sort By:"
+                        name="sortProp"
+                        value={searchSort.sortProp}
                         options={[
                             {key: 'id', text: 'ID', value: 'id'},
                             {key: 'address', text: 'Address', value: 'address'},
@@ -26,18 +34,18 @@ function SearchSort({setSearchSort}) {
                             {key: 'green_flags', text: 'Green Flags', value: 'green_flags'},
                             {key: 'red_flags', text: 'Red Flags', value: 'red_flags'}
                         ]}
-                        placeholder="Select a category"
-                        onChange={e => setSearchSort({searchProp: e.target.value})}
+                        onChange={e => handleUserInputChange(e)}
                     />
                     <Form.Select
                         width={4}
                         label="Sort Order:"
+                        name="sortOrder"
+                        value={searchSort.sortOrder}
                         options={[
                             {key: 'ascending', text: 'Ascending', value: 'ascending'},
                             {key: 'descending', text: 'Descending', value: 'descending'}
                         ]}
-                        placeholder="Select a direction"
-                        onChange={e => setSearchSort({searchOrder: e.target.value})}
+                        onChange={e => handleUserInputChange(e)}
                     />
                 </Form.Group>
             </Form>

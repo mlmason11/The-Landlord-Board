@@ -10,7 +10,7 @@ function Heading() {
         <Header.Subheader >
           We put the 'honest' in 'an honest living'
         </Header.Subheader>
-      </Header>  
+      </Header>
     </>
   )
 }

@@ -4,14 +4,14 @@ import PropertyCard from './PropertyCard'
 function PropertyPage() {
 
     // LOADERS //
-    const propertyObj = useLoaderData()
+    const {propertyObj} = useLoaderData()
 
     // RENDER //
     return(
-        <div className="property-page">
-            <h2>{ propertyObj.address }</h2>
+        
+        <div className='ui one column stackable center aligned page grid'>
             <PropertyCard propertyObj={ propertyObj } />
-            <p>Owner: {propertyObj.owner}</p>
+            <p onClick={console.log(propertyObj)}>Owner: {propertyObj.owner}</p>
             <p>Management: {propertyObj.management}</p>
             <p>Your Comments: {propertyObj.comments}</p>
         </div>

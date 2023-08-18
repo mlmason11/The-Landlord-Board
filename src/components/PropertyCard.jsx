@@ -7,7 +7,7 @@ function PropertyCard({propertyObj}) {
     // ENABLE NAVIGATION //
     const navigate = useNavigate()
 
-    // EVENT HANDLERS //
+    // // EVENT HANDLERS //
     function handleDeleteProperty(e) {
         e.preventDefault()
     
@@ -21,8 +21,8 @@ function PropertyCard({propertyObj}) {
     // RENDER //
     return(
         <Card>
-            <Image src={ propertyObj.img_url } alt={ propertyObj.address } />
-            <Card.Content>
+            <Image src={ propertyObj.img_url } alt={ propertyObj.address } href={`/properties/${propertyObj.id}`}/>
+            <Card.Content >
                 <Card.Header>
                     {propertyObj.address}
                 </Card.Header>

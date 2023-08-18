@@ -59,7 +59,7 @@ function NewPropertyForm() {
 
     // RENDER //
     return (
-        <div className="ui equal width form flex container">
+        <div className="ui equal width segment form flex container">
             <Form onSubmit={e => handleSubmitProperty(e)}>
                 <Form.Group inline widths="equal">
                     <Form.Input

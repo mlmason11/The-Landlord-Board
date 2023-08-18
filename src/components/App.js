@@ -1,4 +1,5 @@
 import Heading from './Heading'
+import Footer from './Footer';
 import { Outlet } from 'react-router-dom'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <Heading />
       <Outlet />
+      <Footer />
     </div>
   );
 }
