@@ -103,19 +103,6 @@
       "red_flags": 27,
       "laundry_in_building": true,
       "comments": "No reservations please as this is not a restaurant"
-    },
-    {
-      "address": "Yarse",
-      "neighborhood": "Yarse",
-      "img_url": "https://www.brickunderground.com/sites/default/files/2023-03/new-york-apartments-for-rent.jpg",
-      "owner": "Yarse",
-      "management": "Yarse",
-      "rent": "2",
-      "green_flags": "3",
-      "red_flags": "4",
-      "laundry_in_building": true,
-      "comments": "Comment",
-      "id": 9
     }
   ]
 }
