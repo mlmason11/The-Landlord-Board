@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Form, Button } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
 
 
 function NewPropertyForm() {
@@ -12,7 +12,7 @@ function NewPropertyForm() {
     const [propertyProps, setPropertyProps] = useState({
         address: "",
         neighborhood: "",
-        image: "",
+        imageURL: "",
         owner: "",
         management: "",
         rent: 0,
@@ -41,7 +41,7 @@ function NewPropertyForm() {
             body: JSON.stringify({
                 address: propertyProps.address,
                 neighborhood: propertyProps.neighborhood,
-                img_url: propertyProps.image,
+                img_url: propertyProps.imageURL,
                 owner: propertyProps.owner,
                 management: propertyProps.management,
                 rent: propertyProps.rent,
@@ -59,8 +59,8 @@ function NewPropertyForm() {
 
     // RENDER //
     return (
-        <div className="ui equal width segment form flex container">
-            <Form onSubmit={e => handleSubmitProperty(e)}>
+        //<div className="ui equal width segment form flex container">
+            <Form onSubmit={e => handleSubmitProperty(e)} className="ui segment form container">
                 <Form.Group inline widths="equal">
                     <Form.Input
                         fluid
@@ -84,7 +84,7 @@ function NewPropertyForm() {
                         fluid
                         label="Owner"
                         type="text"
-                        name="address"
+                        name="owner"
                         value={propertyProps.owner}
                         placeholder="Property owner here..."
                         onChange={e => handleInputChange(e)}
@@ -93,8 +93,8 @@ function NewPropertyForm() {
                         fluid
                         label="Property Management"
                         type="text"
-                        name="address"
-                        value={propertyProps.owner}
+                        name="management"
+                        value={propertyProps.management}
                         placeholder="Management company here..."
                         onChange={e => handleInputChange(e)}
                     />
@@ -129,16 +129,17 @@ function NewPropertyForm() {
                     />
                 </Form.Group>
                 <Form.Group inline>
-                    <Form.Input
-                        width={14}
-                        fluid
-                        label="Image URL"
-                        type="image"
-                        name="image"
-                        value={propertyProps.image}
-                        placeholder="Enter image URL here..."
-                        onChange={e => handleInputChange(e)}
-                    />
+                    <Form.Field width={14}>
+                        <label htmlFor="imageURL">Image URL</label>
+                        <input
+                            type="text"
+                            name="imageURL"
+                            alt={propertyProps.address}
+                            value={propertyProps.imageURL}
+                            placeholder="Enter image URL here..."
+                            onChange={e => handleInputChange(e)}
+                        />
+                    </Form.Field>
                     <Form.Field width={2}>
                         <label htmlFor="laundryInBuilding">Laundry on site?</label>
                         <input
@@ -146,9 +147,8 @@ function NewPropertyForm() {
                             name="laundryInBuilding"
                             value={propertyProps.laundryInBuilding ? true : false}
                             checked={propertyProps.laundryInBuilding ? true : false}
-                            onChange={handleInputChange}
+                            onChange={e => handleInputChange(e)}
                         />
-                        <label htmlFor="laundryInBuilding">{propertyProps.laundryInBuilding ? "Yes" : "No"}</label>
                     </Form.Field>
                 </Form.Group>
                 <Form.TextArea
@@ -159,11 +159,11 @@ function NewPropertyForm() {
                     placeholder="Enter any additional comments here..."
                     onChange={e => handleInputChange(e)}
                 />
-                <Button type="submit">
+                <Form.Button type="submit" className="ui button centered in form">
                     SUBMIT NEW PROPERTY
-                </Button>
+                </Form.Button>
             </Form>
-        </div>
+        //</div>
     )
 }
 

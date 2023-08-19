@@ -22,7 +22,7 @@ function PropertyCard({propertyObj}) {
     return(
         <Card>
             <Image src={ propertyObj.img_url } alt={ propertyObj.address } href={`/properties/${propertyObj.id}`}/>
-            <Card.Content >
+            <Card.Content href={`/properties/${propertyObj.id}`}>
                 <Card.Header>
                     {propertyObj.address}
                 </Card.Header>
@@ -33,15 +33,13 @@ function PropertyCard({propertyObj}) {
                     Rent: ${propertyObj.rent}
                 </Card.Description>
                 <Card.Description>
-                    Green Flags: {propertyObj.green_flags} 
-                    <Icon className='ui green flag icon'/>
+                    Green Flags: {propertyObj.green_flags} <Icon className='ui green flag icon'/>
                 </Card.Description>
                 <Card.Description>
-                    Red Flags: {propertyObj.red_flags} 
-                    <Icon className='ui red flag icon'/>
+                    Red Flags: {propertyObj.red_flags} <Icon className='ui red flag icon'/>
                 </Card.Description>
             </Card.Content>
-            <Button onClick={handleDeleteProperty}>
+            <Button onClick={e => handleDeleteProperty(e)}>
                 DELETE
             </Button>
         </Card>        

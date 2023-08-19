@@ -13,12 +13,17 @@ function PropertyList() {
     // HELPER FUNCTIONS //
     // const cleanString = (str) => str?.toLowerCase().replace(/[\W_]+/g,"");
 
+    
     // STATE //
     const [searchSort, setSearchSort] = useState({
         searchString: "",
-        sortProp: "id",
-        sortOrder: "ascending"
+        sortProp: "",
+        sortOrder: ""
     })
+
+    function handleUserInputChange(e) {
+        setSearchSort( searchSort => ({...searchSort, [e.target.name]:e.target.value}) )
+    }
 
 
     // FILTERING, SORTING & MAPPING //
@@ -71,7 +76,7 @@ function PropertyList() {
     // RENDER //
     return(
         <div>
-            <SearchSort searchSort={searchSort} setSearchSort={setSearchSort} />
+            <SearchSort searchSort={searchSort} handleUserInputChange={handleUserInputChange} />
             <br/><br/>
             <div className="ui cards centered flex grid container four wide">
                 {mappedProperties}

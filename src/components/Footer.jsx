@@ -4,9 +4,9 @@ function Footer() {
 
     return(
         <>
-            <div id="whitespace-div"></div>
+            <br/><br/><br/><br/><br/><br/>
             <div id="footer" className="footer">
-                <Header as='h1' textAlign="center">
+                <Header as='h3' textAlign="center">
                     Footer Coming Soon
                     <Header.Subheader>
                         Socials Go Here

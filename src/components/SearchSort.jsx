@@ -1,9 +1,7 @@
 import { Form } from "semantic-ui-react"
-function SearchSort({searchSort, setSearchSort}) {
+function SearchSort({searchSort, handleUserInputChange}) {
 
-    function handleUserInputChange(e) {
-        setSearchSort( searchSort => ({...searchSort, [e.target.name]:e.target.value}) )
-    }
+    
 
     // RENDER //
     return(
