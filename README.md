@@ -1,8 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## The Landlord Board
+# The Landlord Board
 
 This is a single page application that uses routes to change the content of the webpage.
 
