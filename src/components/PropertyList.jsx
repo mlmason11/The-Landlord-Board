@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import PropertyCard from './PropertyCard'
 import SearchSort from './SearchSort'
+import { Header } from "semantic-ui-react"
 
 
 function PropertyList() {
@@ -76,6 +77,9 @@ function PropertyList() {
     // RENDER //
     return(
         <div>
+            <Header as='h2' textAlign="center">
+                Your Properties
+            </Header>
             <SearchSort searchSort={searchSort} handleUserInputChange={handleUserInputChange} />
             <br/><br/>
             <div className="ui cards centered flex grid container four wide">
