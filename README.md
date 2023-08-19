@@ -10,56 +10,56 @@ This is a single page application that uses routes to change the content of the 
 
 The folder ./src/components stores the following components:
 
-### About
+### `About`
 
 About page.
 
-### App
+### `App`
 
 Main parent component.
 
-### ErrorPage
+### `ErrorPage`
 
 Error page.
 
-### Footer
+### `Footer`
 
 This component remains at the bottom of the screen.
 It currently does not contain any information, but is a great place to add contact information and socials in the future.
 
-### Heading
+### `Heading`
 
 This component remains at the top of the screen.
 It contains the title of the app, as well as the NavBar.
 
-### HomePage
+### `HomePage`
 
 Home page.
 
-### NavBar
+### `NavBar`
 
 Child of Heading.
 Remains at the very top of the page.
 Allows user to navigate to the desired route simply by clicking the corresponding section of the NavBar
 
-### NewPropertyForm
+### `NewPropertyForm`
 
 Form where a user can submit a new property.
 
-### PropertyCard
+### `PropertyCard`
 
 Card featuring an image and a few quick facts about the property.
 
-### PropertyList
+### `PropertyList`
 
 List of PropertyCards.
 Features filtering and sorting functionality.
 
-### PropertyPage
+### `PropertyPage`
 
 Details page for an individual property.
 
-### SearchSort
+### `SearchSort`
 
 Child of PropertyList.
 Allows a user to filter properties by text input.
