@@ -6,7 +6,7 @@ function ErrorPage () {
 
     return(
         <div>
-            <h1>OH NOES!!!</h1>
+            <h1>ERROR</h1>
             <h3>{routeError.status}</h3>
             <h3>{routeError.status}</h3>
         </div>
