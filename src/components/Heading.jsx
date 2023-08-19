@@ -11,6 +11,7 @@ function Heading() {
           We put the 'honest' in 'an honest living'
         </Header.Subheader>
       </Header>
+      <br/><br/>
     </>
   )
 }

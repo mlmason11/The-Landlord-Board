@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Form } from 'semantic-ui-react'
+import { Form, Header } from 'semantic-ui-react'
 
 
 function NewPropertyForm() {
@@ -59,7 +59,10 @@ function NewPropertyForm() {
 
     // RENDER //
     return (
-        //<div className="ui equal width segment form flex container">
+        <div>
+            <Header as='h2' textAlign="center">
+                Add a New Property
+            </Header>
             <Form onSubmit={e => handleSubmitProperty(e)} className="ui segment form container">
                 <Form.Group inline widths="equal">
                     <Form.Input
@@ -163,7 +166,7 @@ function NewPropertyForm() {
                     SUBMIT NEW PROPERTY
                 </Form.Button>
             </Form>
-        //</div>
+        </div>
     )
 }
 

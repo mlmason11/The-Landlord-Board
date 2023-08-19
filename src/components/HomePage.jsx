@@ -3,7 +3,7 @@ import { Header } from "semantic-ui-react"
 function HomePage() {
 
     return(
-        <div className="home-page">
+        <div>
             <Header as='h2' textAlign="center">
                 Home Page
             </Header>
