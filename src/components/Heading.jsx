@@ -4,13 +4,15 @@ import NavBar from "./NavBar"
 function Heading() {
   return (
     <>
-      <NavBar />
-      <Header as='h1' dividing textAlign="center">
+      <br/>
+      <Header as='h1' textAlign="center">
         The Landlord Board
-        <Header.Subheader >
+        <Header.Subheader>
           We put the 'honest' in 'an honest living'
         </Header.Subheader>
       </Header>
+      <br/>
+      <NavBar />
       <br/><br/>
     </>
   )
